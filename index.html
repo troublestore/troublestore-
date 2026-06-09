@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-Comic Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+        }
+        main {
+            margin-top: 20px;
+        }
+        .comic-image {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .nav-buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Comic World</h1>
+    </header>
+
+    <main>
+        <div id="comic-container">
+            <img class="comic-image" src="comic-page-1.jpg" alt="Comic Page 1">
+        </div>
+
+        <div class="nav-buttons">
+            <button onclick="prevPage()">Previous Page</button>
+            <button onclick="nextPage()">Next Page</button>
+        </div>
+    </main>
+
+    <script>
+        let currentPage = 1;
+
+        function nextPage() {
+            currentPage++;
+            document.querySelector('.comic-image').src = "comic-page-" + currentPage + ".jpg";
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                document.querySelector('.comic-image').src = "comic-page-" + currentPage + ".jpg";
+            }
+        }
+    </script>
+
+</body>
+</html>
